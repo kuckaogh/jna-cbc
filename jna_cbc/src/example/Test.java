@@ -6,9 +6,11 @@ public class Test {
 
 	public static void main(String[] args) {
 		//Add demoLib = (Add) Native.loadLibrary("dllExample", Add.class);
-		Add demoLib = (Add) Native.loadLibrary("cbcCInterfaceDll", Add.class);
+		Cbc demoLib = (Cbc) Native.loadLibrary("cbc", Cbc.class);
 
-		System.out.println(demoLib.add(10, 20));
+		String[] arg = new String[] { "cbc", "D:\\cvwrsm\\trunk\\CbcM\\stable\\2.8\\Cbc\\MSVisualStudio\\v10\\Win32\\Release\\test.lp" };
+		
+		System.out.println(demoLib.entrance(2,arg));
 	}
 
 }
